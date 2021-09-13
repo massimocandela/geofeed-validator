@@ -49,5 +49,21 @@ if (errors.length === 0) {
 
 ```
 
+The example above shows how to validate a single geofeed line. If you want to validate an entire geofeed file, you can read the file line by line and validate each line. See example below.
 
+```javascript
+const file = "YOUR_GEOFEED_FILE";
+const rd = readline.createInterface({
+    input: fs.createReadStream(file),
+    console: false
+});
 
+rd.on('line', function(line) {
+    const errors = validator.fromLine(line);
+
+    if (errors.length) {
+        console.log(`${line} Error: ${errors.join(", ")}`);
+    }
+});
+
+```
