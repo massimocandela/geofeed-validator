@@ -1,0 +1,13 @@
+.idea/
+node_modules/
+build.sh
+bin/
+src/
+.cache/
+logs/
+.DS_Store
+.npmrc
+.cache/
+result.csv
+.env
+.gitignore
