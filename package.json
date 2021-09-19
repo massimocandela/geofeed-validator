@@ -1,6 +1,6 @@
 {
   "name": "geofeed-validator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A utility to validate geofeed file (RFC8805)",
   "main": "dist/validator.js",
   "bin": {
