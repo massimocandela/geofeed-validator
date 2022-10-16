@@ -32,7 +32,7 @@ const rd = readline.createInterface({
 rd.on('line', function(line) {
     const errors = validator.fromLine(line);
 
-    if (errors.length) {
+    if (errors && errors.length) {
         console.log(`${line} Error: ${errors.join(", ")}`);
     }
 });

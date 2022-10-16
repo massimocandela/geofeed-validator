@@ -3,7 +3,10 @@ import IsoAbstraction from "./isoAbstraction";
 const iso = new IsoAbstraction();
 
 const fromLine = (line) => {
-    return fromArray(line.split(","));
+    const trimmedLine = line.trim();
+    if (!!trimmedLine && trimmedLine.length > 0 && !trimmedLine.startsWith("#")) {
+        return fromArray(trimmedLine.split(","));
+    }
 };
 
 const fromArray = ([prefix, country, region, city, zip]) => {
