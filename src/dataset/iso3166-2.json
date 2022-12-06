@@ -7014,7 +7014,7 @@
       "type": "Metropolitan department"
     },
     {
-      "code": "FR-75",
+      "code": "FR-75C",
       "name": "Paris",
       "parent": "IDF",
       "type": "Metropolitan department"
@@ -25601,7 +25601,7 @@
       "type": "Province"
     },
     {
-      "code": "ZA-GT",
+      "code": "ZA-GP",
       "name": "Gauteng",
       "type": "Province"
     },
