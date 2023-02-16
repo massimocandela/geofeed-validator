@@ -54,7 +54,7 @@
       "./src/dataset/*.json"
     ],
     "targets": [
-      "node14"
+      "node18"
     ]
   },
   "release-it": {
