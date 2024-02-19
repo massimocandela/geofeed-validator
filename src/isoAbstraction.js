@@ -17,16 +17,18 @@ export default class IsoAbstraction {
         for (let item of iso31662["3166-2"].map(i => i["code"])) {
             this.indexSubdivisions[item] = item.split("-")[0];
         }
-        // this._applyCorrectionsSubdivisions();
+        this._applyCorrectionsSubdivisions();
     };
 
-    // _applyCorrectionsSubdivisions = () => {
-    //     const rename = [["PL-DS", "PL-02"], ["PL-KP", "PL-04"], ["PL-LB", "PL-08"], ["PL-LD", "PL-10"], ["PL-LU", "PL-06"], ["PL-MA", "PL-12"], ["PL-MZ", "PL-14"], ["PL-OP", "PL-16"], ["PL-PD", "PL-20"], ["PL-PK", "PL-18"], ["PL-PM", "PL-22"], ["PL-SK", "PL-26"], ["PL-SL", "PL-24"], ["PL-WN", "PL-28"], ["PL-WP", "PL-30"], ["PL-ZP", "PL-32"]];
-    //     for (let [from, to] of rename) {
-    //         this.indexSubdivisions[to] = this.indexSubdivisions[from];
-    //         delete this.indexSubdivisions[from];
-    //     }
-    // };
+    _applyCorrectionsSubdivisions = () => {
+        this.indexSubdivisions["CN-HK"] = "HK";
+
+        // const rename = [["PL-DS", "PL-02"], ["PL-KP", "PL-04"], ["PL-LB", "PL-08"], ["PL-LD", "PL-10"], ["PL-LU", "PL-06"], ["PL-MA", "PL-12"], ["PL-MZ", "PL-14"], ["PL-OP", "PL-16"], ["PL-PD", "PL-20"], ["PL-PK", "PL-18"], ["PL-PM", "PL-22"], ["PL-SK", "PL-26"], ["PL-SL", "PL-24"], ["PL-WN", "PL-28"], ["PL-WP", "PL-30"], ["PL-ZP", "PL-32"]];
+        // for (let [from, to] of rename) {
+        //     this.indexSubdivisions[to] = this.indexSubdivisions[from];
+        //     delete this.indexSubdivisions[from];
+        // }
+    };
 
     isValidCountryCode = (code) => {
         try {
