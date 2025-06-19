@@ -16,5 +16,8 @@ npm run compile
 
 ./node_modules/.bin/pkg ./package.json --targets node22-macos-x64 --output bin/geofeed-validator-macos-x64 --loglevel=error
 
+./node_modules/.bin/pkg ./package.json --targets node22-macos-arm64 --output bin/geofeed-validator-macos-arm64 --loglevel=error
+
+
 echo "--> Geofeed validator compiled in bin/"
 
