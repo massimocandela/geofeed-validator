@@ -11,3 +11,6 @@ logs/
 result.csv
 .env
 .gitignore
+.git/
+~/
+.npm/
