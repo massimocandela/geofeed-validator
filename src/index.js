@@ -1,24 +1,24 @@
-import yargs from 'yargs';
-import fs from 'fs';
-import readline from 'readline';
-import validator from './validator';
+import yargs from "yargs";
+import fs from "fs";
+import readline from "readline";
+import validator from "./validator";
 
 const params = yargs
-    .usage('Usage: $0 <command> [options]')
+    .usage("Usage: $0 <command> [options]")
 
-    .command('$0', 'Run geofeed validator (default)', function () {
+    .command("$0", "Run geofeed validator (default)", function () {
         yargs
-            .alias('v', 'version')
-            .nargs('v', 0)
-            .describe('v', 'Show version number')
+            .alias("v", "version")
+            .nargs("v", 0)
+            .describe("v", "Show version number")
 
-            .alias('f', 'output')
-            .nargs('f', 1)
-            .describe('f', 'Input file')
+            .alias("f", "output")
+            .nargs("f", 1)
+            .describe("f", "Input file");
     })
-    .help('h')
-    .alias('h', 'help')
-    .epilog('Copyright (c) 2020, Massimo Candela')
+    .help("h")
+    .alias("h", "help")
+    .epilog("Copyright (c) 2020, Massimo Candela")
     .argv;
 
 if (!params.f) {
@@ -29,7 +29,7 @@ const rd = readline.createInterface({
     console: false
 });
 
-rd.on('line', function(line) {
+rd.on("line", function (line) {
     const errors = validator.fromLine(line);
 
     if (errors && errors.length) {
