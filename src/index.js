@@ -12,7 +12,7 @@ const params = yargs
             .nargs("v", 0)
             .describe("v", "Show version number")
 
-            .alias("f", "output")
+            .alias("f", "input")
             .nargs("f", 1)
             .describe("f", "Input file");
     })
