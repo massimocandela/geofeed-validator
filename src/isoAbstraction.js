@@ -33,26 +33,23 @@ export default class IsoAbstraction {
     };
 
     isValidCountryCode = (code) => {
-        try {
-            return this.indexCountries[code.toUpperCase()] || false;
-        } catch (e) {
+        if (typeof code !== "string") {
             return false;
         }
+        return this.indexCountries[code.toUpperCase()] || false;
     };
 
     isValidSubdivisionCode = (code) => {
-        try {
-            return !!this.indexSubdivisions[code.toUpperCase()] || false;
-        } catch (e) {
+        if (typeof code !== "string") {
             return false;
         }
+        return !!this.indexSubdivisions[code.toUpperCase()] || false;
     };
 
     isSubdivisionInCountry = (subdivisionCode, countryCode) => {
-        try {
-            return this.indexSubdivisions[subdivisionCode.toUpperCase()] === countryCode.toUpperCase();
-        } catch (e) {
+        if (typeof subdivisionCode !== "string" || typeof countryCode !== "string") {
             return false;
         }
+        return this.indexSubdivisions[subdivisionCode.toUpperCase()] === countryCode.toUpperCase();
     };
 }
