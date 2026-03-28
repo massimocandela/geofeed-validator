@@ -24,8 +24,10 @@ const params = yargs
 if (!params.f) {
     throw new Error("The input file must be specified (option -f)");
 }
+
+const inputStream = fs.createReadStream(params.f);
 const rd = readline.createInterface({
-    input: fs.createReadStream(params.f),
+    input: inputStream,
     console: false
 });
 
@@ -35,4 +37,14 @@ rd.on("line", function (line) {
     if (errors && errors.length) {
         console.log(`${line} Error: ${errors.join(", ")}`);
     }
+});
+
+inputStream.on("error", function (error) {
+    console.error(`Unable to read input file: ${error.message}`);
+    process.exitCode = 1;
+    rd.close();
+});
+
+rd.on("close", function () {
+    inputStream.destroy();
 });
