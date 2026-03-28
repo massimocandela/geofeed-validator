@@ -10,12 +10,14 @@ export default class IsoAbstraction {
     };
 
     _createIndex = () => {
-
-        for (let alpha2 of iso31661["3166-1"].map(i => i["alpha_2"])) {
+        for (let item of iso31661["3166-1"]) {
+            const alpha2 = item["alpha_2"];
             this.indexCountries[alpha2] = true;
         }
-        for (let item of iso31662["3166-2"].map(i => i["code"])) {
-            this.indexSubdivisions[item] = item.split("-")[0];
+        for (let item of iso31662["3166-2"]) {
+            const code = item["code"];
+            const separatorIndex = code.indexOf("-");
+            this.indexSubdivisions[code] = separatorIndex === -1 ? code : code.slice(0, separatorIndex);
         }
         this._applyCorrectionsSubdivisions();
     };
