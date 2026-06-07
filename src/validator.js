@@ -1,5 +1,6 @@
 import ipUtils from "ip-sub";
 import IsoAbstraction from "./isoAbstraction";
+
 const iso = new IsoAbstraction();
 
 const fromLine = (line) => {
@@ -32,6 +33,6 @@ const fromArray = ([prefix, country, region, city, zip]) => {
     }
 
     return out;
-}
+};
 
-export default { fromArray, fromLine };
+export default {fromArray, fromLine};

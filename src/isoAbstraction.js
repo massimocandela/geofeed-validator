@@ -1,5 +1,5 @@
-import iso31661 from './dataset/iso3166-1.json';
-import iso31662 from './dataset/iso3166-2.json';
+import iso31661 from "./dataset/iso3166-1.json";
+import iso31662 from "./dataset/iso3166-2.json";
 
 export default class IsoAbstraction {
     constructor() {
