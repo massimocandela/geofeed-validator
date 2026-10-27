@@ -108,5 +108,9 @@
         "bin/geofeed-validator-win-x64.exe"
       ]
     }
+  },
+  "engines": {
+    "npm": ">=10.9.9",
+    "node": ">=22.23.4"
   }
 }
